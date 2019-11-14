@@ -5,6 +5,7 @@ from requests_html import HTMLSession
 
 if __name__ == '__main__':
 
+    print("greet!")
 
     session = HTMLSession()
     url = "http://www.sina.com.cn/"

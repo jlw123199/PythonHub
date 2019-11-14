@@ -1,24 +1,27 @@
 # -*- coding: utf-8 -*-
-
+import random
 import threading
 
 class ThreadCrawl(threading.Thread):
 
-    def __init__(self, name):
+    def __init__(self, treadName, age, order ):
         super(ThreadCrawl, self).__init__()
-        self.sname = name
+        self.sname = treadName
+        self.age = age
 
     def run(self):
         for i in range(1,10):
-            print( self.sname + "--"+ str(i))
+            print( "Order " +  str(i) + " Name: " + self.sname + "--"+ " Age: "+ str(self.age) +'--' + str(i))
 
 
 def main():
-    c_thread = ThreadCrawl("Tread1")
+    int order =0;
+    c_thread = ThreadCrawl("Tread1", random.randint(1,100) )
     c_thread.start()
 
-    c_thread = ThreadCrawl("Tread2")
+    c_thread = ThreadCrawl("Tread2", random.randint(1,100) )
     c_thread.start()
 
 
-main()
+if __name__ == '__main__':
+    main()

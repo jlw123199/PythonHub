@@ -141,8 +141,8 @@ if __name__ == '__main__':
 # 793
     page_queue = Queue(10)
     page_queue
-    for i in range(793,812):
-        page_queue.put(i,block=false)  # 把页码存储到page_queue里面
+    for i in range(1,5):
+        page_queue.put(i)  # 把页码存储到page_queue里面
 
     print("end")
     # 采集结果
@@ -167,6 +167,7 @@ if __name__ == '__main__':
     for thread in thread_crawl:
         thread.join()
         print("抓取线程结束")
+
 
     thread_image = []
     image_list = ['下载线程1号', '下载线程2号', '下载线程3号', '下载线程4号']
