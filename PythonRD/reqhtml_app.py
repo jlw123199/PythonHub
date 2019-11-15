@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+# This module demonstrate how to use requests_html
+
 import requests
 import re
 

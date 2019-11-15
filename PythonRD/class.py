@@ -1,4 +1,6 @@
 
+# This ia calss definition example in python
+
 class Person:
     def __init__(self):
         self.name = "human"
@@ -23,5 +25,4 @@ class Student(Person):
 
 if __name__ == '__main__':
     s1 = Student(7)
-
     print( s1.getName() , s1.getGrade() ,s1.getAge(),sep ='\n', end='\n')
