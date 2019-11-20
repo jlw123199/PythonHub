@@ -28,4 +28,7 @@ def load_mnist(path, kind='train'):
 images, labels = load_mnist(os.curdir)
 
 print (images)
+print (len(images))
+print ("--"*80)
 print (labels)
+print (len(labels))
