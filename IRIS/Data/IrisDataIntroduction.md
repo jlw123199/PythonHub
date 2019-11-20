@@ -48,4 +48,6 @@ Several versions of the dataset have been published.[8]
 
 
 
+sepal length,   sepal width,    petal length,   petal width,    species (label)
 
+5.1,            3.5,            1.4,            0.2,            Iris-setosa
