@@ -16,7 +16,9 @@ fig, ax = plt.subplots(
     sharey=True, )
 
 ax = ax.flatten()
+
 for i in range(10):
+    # img = X_train[y_train == i][0].reshape(28, 28)
     img = X_train[y_train == i][0].reshape(28, 28)
     ax[i].imshow(img, cmap='Greys', interpolation='nearest')
 
