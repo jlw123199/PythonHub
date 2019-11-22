@@ -154,3 +154,4 @@ print(img.shape)
 predictions_single = model.predict(img)
 
 print(predictions_single)
+
