@@ -4,18 +4,18 @@ import threading
 
 class ThreadCrawl(threading.Thread):
 
-    def __init__(self, treadName, age, order ):
+    def __init__(self, treadName, age):
         super(ThreadCrawl, self).__init__()
         self.sname = treadName
         self.age = age
 
     def run(self):
-        for i in range(1,10):
+        for i in range(1,100):
             print( "Order " +  str(i) + " Name: " + self.sname + "--"+ " Age: "+ str(self.age) +'--' + str(i))
 
 
 def main():
-    int order =0;
+
     c_thread = ThreadCrawl("Tread1", random.randint(1,100) )
     c_thread.start()
 
