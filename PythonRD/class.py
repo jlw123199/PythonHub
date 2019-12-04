@@ -22,7 +22,14 @@ class Student(Person):
     def getGrade(self):
         return self.grade
 
+class Teacher(Person):
+    def __init__(self,educationBackground):
+        super(Teacher,self).__init__()
+        self.educationBackground = educationBackground
 
 if __name__ == '__main__':
     s1 = Student(7)
-    print( s1.getName() , s1.getGrade() ,s1.getAge(),sep ='\n', end='\n')
+    print( s1.getName() , s1.getGrade() ,s1.getAge(),sep ='---', end='\n')
+
+    teacher = Teacher("Master")
+    print(teacher.getName(), teacher.educationBackground, teacher.getAge(), sep='---', end='\n')

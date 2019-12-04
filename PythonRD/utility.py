@@ -4,6 +4,8 @@ data = [1,3,3,4,5,6,5,5,5]
 
 categories = np.unique(data,  return_counts=True)
 
+np.append
+
 print(categories)
 
 a = np.array([[1, 1], [2, 3]])
