@@ -112,6 +112,7 @@ pop [register]
 
 With the command **cmp** we can compare two register. 
 
+
 ```
 cmp r0, r1
 je l1
