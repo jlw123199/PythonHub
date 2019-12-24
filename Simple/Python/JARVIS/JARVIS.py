@@ -10,12 +10,15 @@ JARVIS:
 from datetime import datetime          # datetime module supplies classes for manipulating dates and times
 import subprocess                      # subprocess module allows you to spawn new processes
 
-import speech_recognition as sr        # speech_recognition Library for performing speech recognition with support for Google Speech Recognition, etc..
+import speech_recognition  as sr        # speech_recognition Library for performing speech recognition with support for Google Speech Recognition, etc..
 
+ 
 
 
 # obtain audio from the microphone
 r = sr.Recognizer()
+
+
 with sr.Microphone() as source:
     print("Say something!")
     audio = r.listen(source)

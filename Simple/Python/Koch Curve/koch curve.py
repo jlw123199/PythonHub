@@ -1,9 +1,13 @@
 # importing the libraries
 # turtle standard graphics library for python
-import turtle
+
+import turtle as turtle
 
 
 # function to create koch snowflake or koch curve
+from skimage.filters.lpi_filter import forward
+
+
 def snowflake(lengthSide, levels):
     if levels == 0:
         forward(lengthSide)

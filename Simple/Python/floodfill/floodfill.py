@@ -102,5 +102,5 @@ class FloodFill:
 
 if __name__ == "__main__":
     import sys
-    floodfill = FloodFill(sys.argv[1], sys.argv[2])
+    floodfill = FloodFill(200, 200)
     floodfill.run()

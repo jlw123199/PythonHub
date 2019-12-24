@@ -19,6 +19,7 @@ class Test(unittest.TestCase):
         """
             test for method component
         """
+
         x = Vector([1, 2, 3])
         self.assertEqual(x.component(0), 1)
         self.assertEqual(x.component(2), 3)
@@ -112,6 +113,7 @@ class Test(unittest.TestCase):
             test for the changeComponent(...)-method
         """
         x = Vector([1, 0, 0])
+
         x.changeComponent(0, 0)
         x.changeComponent(1, 1)
         self.assertEqual(x.__str__(), "(0,1,0)")
