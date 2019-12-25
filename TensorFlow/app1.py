@@ -15,3 +15,5 @@ print
 print ("type of mnist is %s" % (type(mnist)))
 print ("number of train data is %d" % (mnist.train.num_examples))
 print ("number of test data is %d" % (mnist.test.num_examples))
+
+tf.saved_model.load()
