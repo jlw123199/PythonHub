@@ -67,6 +67,7 @@ def huffman(file_path):
     Parse the file, build the tree, then run through the file
     again, using the list of Letters to find and print out the
     bitstring for each letter.
+
     """
     letters_list = parse_file(file_path)
     root = build_tree(letters_list)
