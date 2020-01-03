@@ -1,19 +1,12 @@
-import numpy as np
-import tensorflow as tf
 import matplotlib.pyplot as plt
-# 下面方法二选一
-# 直接 API下载
-import tensorflow.examples.tutorials.mnist as input_data
+import tensorflow as tf
+from networkx.algorithms.assortativity.tests.test_correlation import np
 
-# 文件路径下获取
-# import input_data
-# print ("packs loaded.")
-print ("download and extract mnist dataset...")
-# 独热编码（One-Hot Encoding）
-mnist = input_data.read_data_sets('data/', one_hot = True)
-print
-print ("type of mnist is %s" % (type(mnist)))
-print ("number of train data is %d" % (mnist.train.num_examples))
-print ("number of test data is %d" % (mnist.test.num_examples))
+(train_data, train_label), (_, _) = tf.keras.datasets.mnist.load_data()
+train_data = np.expand_dims(train_data.astype(np.float32) / 255.0, axis=-1)      # [60000, 28, 28, 1]
+mnist_dataset = tf.data.Dataset.from_tensor_slices((train_data, train_label))
 
-tf.saved_model.load()
+for image, label in mnist_dataset:
+    plt.title(label.numpy())
+    plt.imshow(image.numpy()[:, :, 0])
+    plt.show()

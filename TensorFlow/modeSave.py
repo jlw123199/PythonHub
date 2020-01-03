@@ -72,3 +72,4 @@ print('Test accuracy:', score[1])
 model.save('mnist_cnn.h5')
 
 
+
