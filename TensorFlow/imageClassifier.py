@@ -1,5 +1,7 @@
 import tensorflow as tf
+
 from tensorflow import keras
+from PIL import Image
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -72,3 +74,53 @@ test_loss, test_acc = model.evaluate(test_images, test_labels)
 
 print('Test accuracy:', test_acc)
 
+
+
+# 网上Copy的图片转数组
+
+def jpg_image_to_array(image_path):
+  """
+  Loads JPEG image into 3D Numpy array of shape
+  (width, height, channels)
+  """
+  with Image.open(image_path) as image:
+    im_arr = np.fromstring(image.tobytes(), dtype=np.uint8)
+    im_arr = im_arr.reshape((image.size[1], image.size[0], 3))
+  return im_arr
+
+# 网上Copy的rgb转灰度图
+# convert rgb (224,224,3 ) to gray (224,224) image
+def rgb2gray(rgb):
+        return np.dot(rgb[..., :3], [0.299, 0.587, 0.114]) #分别对应通道 R G B
+
+# 如果没做出来并看到这一步，作业再加三题
+# 什么是RGB，
+# 什么是灰度图
+# 读取RGB与读取灰度图有什么不同
+
+
+test_img = rgb2gray(jpg_image_to_array(r"D:\JiaLiWei\WorkArea\PythonRD\PythonHub\TensorFlow\333.jpg"))
+print(test_img.shape)
+test_img.show()
+
+test_img = test_img / 255.0
+
+print (test_img)
+
+prediction = model.predict(test_img.reshape(1, 28, 28))
+
+print(class_names[np.argmax(prediction)])
+
+plt.figure()
+plt.imshow(test_img)
+plt.colorbar()
+plt.grid(False)
+
+test_img = rgb2gray(jpg_image_to_array('333.jpeg'))
+print(test_img.shape)
+
+test_img = (255 - test_img) / 255.0
+
+prediction = model.predict(test_img.reshape(1, 28, 28))
+prediction_index = np.argmax(prediction)
+print(('预测结果：%s，%d%%') %(class_names[prediction_index], prediction[0][prediction_index] * 100))

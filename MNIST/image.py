@@ -26,3 +26,4 @@ ax[0].set_xticks([])
 ax[0].set_yticks([])
 plt.tight_layout()
 plt.show()
+
